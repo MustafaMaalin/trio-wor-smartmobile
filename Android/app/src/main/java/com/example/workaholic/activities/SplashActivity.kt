@@ -1,4 +1,4 @@
-package com.example.workaholic
+package com.example.workaholic.activities
 
 import android.content.Intent
 import android.os.Build
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.example.workaholic.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,8 @@ class SplashActivity : AppCompatActivity() {
         @Suppress("Deprecation")
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashActivity,LoginActivity::class.java))
+                startActivity(Intent(this@SplashActivity,
+                    LoginActivity::class.java))
                 finish()
             }, 2500
         )
