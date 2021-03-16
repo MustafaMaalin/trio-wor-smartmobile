@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.workaholic">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Workaholic">
-        <activity android:name=".activities.UserProfileActivity"></activity>
+        <activity android:name=".activities.MainActivity2"></activity>
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".activities.UserProfileActivity" />
         <activity
             android:name=".activities.BaseActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".activities.RegisterActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
