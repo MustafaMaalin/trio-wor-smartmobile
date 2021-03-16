@@ -22,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //val locButton = findViewById<Button>(R.id.locButton)
+
+        locButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+
+            startActivity(intent)
+        }
+
         val sharedPreferences = getSharedPreferences(Constants.PREFERENCES,Context.MODE_PRIVATE)
         val username = sharedPreferences.getString(Constants.LOGGED_IN_USERNAME,"")!!
         tv_main.text = "Username : $username"
