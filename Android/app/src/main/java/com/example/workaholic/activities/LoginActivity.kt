@@ -2,8 +2,13 @@ package com.example.workaholic.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.util.Log
 import android.view.View
 import com.example.workaholic.R
+import com.example.workaholic.firestore.FirestoreClass
+import com.example.workaholic.models.User
+import com.example.workaholic.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -46,16 +51,20 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             val email = email_login_tv.text.toString()
             val password = password_login_tv.text.toString()
 
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+            FirebaseAuth.getInstance()
+                    .signInWithEmailAndPassword(email,password)
+                    .addOnCompleteListener { task ->
 
                 hideProgress()
 
                 if (task.isSuccessful)
                 {
+                    FirestoreClass().getUserDetails(this@LoginActivity)
                     showSnackBar("You are logged in successfully",false)
                 }
                 else
                 {
+                    hideProgress()
                     showSnackBar(task.exception!!.message.toString(),true)
                 }
             }
@@ -75,6 +84,24 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             else {
                 return true
             }
+    }
+
+    fun userLoggedInSuccess (user: User)
+    {
+        hideProgress()
+
+        Log.e("First Name: ",user.first_name)
+        Log.e("Last Name: ", user.last_name)
+        Log.e("Email: ", user.email)
+
+        @Suppress("Deprecation")
+        Handler().postDelayed(
+                {
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
+                    startActivity(intent)
+                    finish()
+                }, 1500)
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.workaholic.activities
 import android.os.Bundle
 import android.widget.Toast
 import com.example.workaholic.R
+import com.example.workaholic.firestore.FirestoreClass
 import com.example.workaholic.models.User
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -32,13 +33,12 @@ class RegisterActivity : BaseActivity() {
             val password: String = password_reg.text.toString()
             val email: String = email_reg.text.toString()
 
-
+            //Create an instance and register with email and passowrd
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(OnCompleteListener { task ->
-
-                        hideProgress()
-
+                        //If registration successfully done
                         if (task.isSuccessful) {
+                            //Firebase register user
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             val user = User(
                                     firebaseUser.uid,
@@ -46,11 +46,15 @@ class RegisterActivity : BaseActivity() {
                                     last_name_reg.text.toString(),
                                     email_reg.text.toString()
                             )
-                            //showSnackBar("Registration success! User id is ${firebaseUser.uid}", false)
 
-                            FirebaseAuth.getInstance().signOut()
-                            finish()
+
+                            FirestoreClass().registerUser(this@RegisterActivity,user)
+
+                            //FirebaseAuth.getInstance().signOut()
+                            //finish()
                         } else {
+                            //Registration failed -> display error
+                            hideProgress()
                             showSnackBar("Registration failed! ${task.exception!!.message.toString()}", true)
                         }
                     })
@@ -62,7 +66,7 @@ class RegisterActivity : BaseActivity() {
             showSnackBar("Please insert a valid email", true)
             return false
         }
-        else if (password_reg.text.isEmpty()) {
+        else if (password_reg.text.isNullOrBlank()) {
             showSnackBar("Select a password", true)
             return false
         }
@@ -76,9 +80,6 @@ class RegisterActivity : BaseActivity() {
     {
         hideProgress()
 
-        Toast.makeText(this@RegisterActivity,
-                "You are registered successfully",
-                Toast.LENGTH_SHORT)
-                .show()
+        showSnackBar("Registration successfully done!", false)
     }
 }

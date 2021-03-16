@@ -9,17 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Workaholic">
-        <activity android:name=".activities.BaseActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-        </activity>
-
-        <activity android:name=".activities.RegisterActivity"
-            android:theme="@style/Theme.Design.Light.NoActionBar"/>
-
+        <activity android:name=".activities.UserProfileActivity"></activity>
+        <activity
+            android:name=".activities.BaseActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".activities.LoginActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
-
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
