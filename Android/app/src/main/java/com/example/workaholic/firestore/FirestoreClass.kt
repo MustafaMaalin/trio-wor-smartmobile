@@ -3,6 +3,7 @@ package com.example.workaholic.firestore
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.util.Log
 import com.example.workaholic.activities.LoginActivity
 import com.example.workaholic.activities.RegisterActivity
@@ -12,6 +13,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.example.workaholic.activities.BaseActivity
 
 class FirestoreClass {
 
@@ -89,5 +93,7 @@ class FirestoreClass {
                     )
                 }
     }
+
+
 
 }

@@ -29,9 +29,9 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed(
             {
                 startActivity(Intent(this@SplashActivity,
-                    LoginActivity::class.java))
+                    UserProfileActivity::class.java))
                 finish()
-            }, 2500
+            }, 1500
         )
     }
 }
