@@ -20,11 +20,44 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="313dp"
-        android:layout_height="362dp"
+        android:layout_width="245dp"
+        android:layout_height="249dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.655"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/textPic"
+        android:layout_width="238dp"
+        android:layout_height="134dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Make a picture with your ID "
+
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/textVerify"
+        android:layout_width="240dp"
+        android:layout_height="88dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="and your face for verification. "
+
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
