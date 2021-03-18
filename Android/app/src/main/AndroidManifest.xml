@@ -25,11 +25,7 @@
         <activity android:name=".activities.ChatActivity"></activity>
         <activity android:name=".activities.JobDescriptionActivitity"></activity>
         <activity android:name=".activities.JobActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.CameraActivity"></activity>
         <activity
@@ -49,7 +45,14 @@
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar" />
+            android:theme="@style/Theme.Design.NoActionBar" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity android:name=".activities.MainActivity" />
     </application>
 

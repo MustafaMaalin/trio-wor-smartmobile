@@ -1,5 +1,6 @@
 package com.example.workaholic.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.example.workaholic.R
@@ -19,6 +20,8 @@ class RegisterActivity : BaseActivity() {
 
         register_butt.setOnClickListener {
                 register()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

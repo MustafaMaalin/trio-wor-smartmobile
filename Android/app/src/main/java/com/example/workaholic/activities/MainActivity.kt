@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         //val locButton = findViewById<Button>(R.id.locButton)
 
-        locButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, ChatActivity::class.java)
+        jobsButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, JobActivity::class.java)
 
             startActivity(intent)
         }
@@ -44,9 +44,9 @@ class MainActivity : AppCompatActivity() {
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
 
-        findViewById<Button>(R.id.bt_get_location).setOnClickListener {
-            fetchLocation()
-        }
+//        findViewById<Button>(R.id.bt_get_location).setOnClickListener {
+//            fetchLocation()
+//        }
     }
     private fun fetchLocation() {
         val task = fusedLocationProviderClient.lastLocation
