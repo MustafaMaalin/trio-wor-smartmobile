@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         //val locButton = findViewById<Button>(R.id.locButton)
 
         locButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            val intent = Intent(this@MainActivity, ChatActivity::class.java)
 
             startActivity(intent)
         }
