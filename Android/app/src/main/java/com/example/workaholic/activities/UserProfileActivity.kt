@@ -4,25 +4,36 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.workaholic.R
+import com.example.workaholic.firestore.FirestoreClass
 import com.example.workaholic.models.User
 import com.example.workaholic.utils.Constants
+import com.example.workaholic.utils.GlideLoader
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_user_profile.*
 import java.io.IOException
-import java.net.URI
-import java.util.jar.Manifest
+import java.util.HashMap
 
 class UserProfileActivity : BaseActivity(), View.OnClickListener {
+
+    var mSelectedImage : Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
         var userDetails : User = User()
+
+        post_job_butt.setOnClickListener{
+            val title:String = job_title.text.toString()
+            val description: String = job_description.text.toString()
+            saveFirebase(title,description)
+        }
+
+
         if(intent.hasExtra(Constants.EXTRA_USER_DETAILS))
         {
             //Get user detail from intent as Parcelable
@@ -44,7 +55,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                         )
                         == PackageManager.PERMISSION_GRANTED
                     ) {
-                        Constants.showUserChooser(this)
+                        Constants.showImageChooser(this)
                     }
                     else
                     {
@@ -70,7 +81,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
             {
                 showSnackBar("Storage Permission Granted", false)
-                Constants.showUserChooser(this)
+                Constants.showImageChooser(this)
             }
             else {
                 showSnackBar("Permission Denied!",true)
@@ -80,18 +91,44 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK){
-            if (data != null)
-            {
-                try{
-                    val selectedImageURI = data.data!!
+        showProgress("Please wait")
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == Constants.IMAGE_REQUEST_CODE) {
+                if (data != null) {
+                    try {
+                        mSelectedImage = data.data!!
 
-                    iv_user_photo.setImageURI(Uri.parse(selectedImageURI.toString()))
-                }
-                catch (e: IOException){
-                    showSnackBar("Image selection failed",true)
+                        //iv_user_photo.setImageURI(selectedImageURI)
+                        GlideLoader(this).loadUserPicture(mSelectedImage!!,iv_user_photo)
+                        FirestoreClass().uploadImageToCloudStorage(this,mSelectedImage)
+                    } catch (e: IOException) {
+                        showSnackBar("Image selection failed", true)
+                    }
                 }
             }
         }
     }
+
+    fun imageUploadSuccess(ImgUrl:String){
+        hideProgress()
+        showSnackBar("Success Upload. URL: $ImgUrl",false)
+    }
+
+    fun saveFirebase(title:String,description:String)
+    {
+        val db = FirebaseFirestore.getInstance()
+        val job:MutableMap<String,Any> = HashMap()
+        job["title"] = title
+        job["description"] = description
+        job["image"] = mSelectedImage.toString()
+
+        db.collection("jobs").add(job)
+            .addOnSuccessListener {
+                showSnackBar("Added successful!",false)
+            }
+            .addOnFailureListener {
+                showSnackBar("Failed to add!",true)
+            }
+    }
+
 }
