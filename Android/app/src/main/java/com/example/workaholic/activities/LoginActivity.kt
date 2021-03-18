@@ -94,10 +94,11 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         Log.e("Last Name: ", user.last_name)
         Log.e("Email: ", user.email)
 
+
         @Suppress("Deprecation")
         Handler().postDelayed(
                 {
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                     intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
                     startActivity(intent)
                     finish()

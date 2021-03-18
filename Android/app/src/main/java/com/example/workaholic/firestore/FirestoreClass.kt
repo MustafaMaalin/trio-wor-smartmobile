@@ -3,6 +3,7 @@ package com.example.workaholic.firestore
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.util.Log
 import com.example.workaholic.activities.LoginActivity
 import com.example.workaholic.activities.RegisterActivity
@@ -12,6 +13,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.example.workaholic.activities.BaseActivity
+import com.example.workaholic.activities.UserProfileActivity
 
 class FirestoreClass {
 
@@ -89,5 +94,40 @@ class FirestoreClass {
                     )
                 }
     }
+
+    fun uploadImageToCloudStorage(activity: Activity,uri: Uri?) {
+        val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
+            Constants.JOB_IMAGE + System.currentTimeMillis() + "."
+                    + Constants.getFileExtension(activity, uri)
+        )
+        sRef.putFile(uri!!).addOnSuccessListener { taskSnapshot ->
+            Log.e(
+                "Firebase Image URL", taskSnapshot.metadata!!.reference!!.downloadUrl.toString()
+            )
+            taskSnapshot.metadata!!.reference!!.downloadUrl.addOnSuccessListener { uri ->
+                Log.e("Downloadable Image URl", uri.toString())
+                when (activity) {
+                    is UserProfileActivity -> {
+                        activity.imageUploadSuccess(uri.toString())
+                    }
+                }
+            }
+        }
+            .addOnFailureListener { exception ->
+                when (activity) {
+                    is UserProfileActivity -> {
+                        activity.hideProgress()
+                    }
+                }
+                Log.e(
+                    activity.javaClass.simpleName,
+                    exception.message,
+                    exception
+
+                    )
+            }
+    }
+
+
 
 }
