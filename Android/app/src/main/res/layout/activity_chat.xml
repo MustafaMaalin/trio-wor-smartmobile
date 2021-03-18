@@ -120,7 +120,7 @@
         android:id="@+id/Locationtxt"
         android:layout_width="396dp"
         android:layout_height="81dp"
-        android:text="TextView"
+        android:text="Location"
         android:textAlignment="center"
         android:textSize="26dp"
         android:background="@color/colorPrimary"
