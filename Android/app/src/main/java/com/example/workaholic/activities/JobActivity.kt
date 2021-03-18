@@ -18,13 +18,13 @@ class JobActivity : AppCompatActivity() {
     var listview = findViewById<ListView>(R.id.listView)
     var list = mutableListOf<Model>()
 
-    list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
-        list.add(Model("Plumbing", "I need someone to fix my fridge!", R.drawable.plumbing))
+    list.add(Model("Technician", "I need someone to fix my fridge!", R.drawable.tech))
+        list.add(Model("Plumbing", "I need someone to fix my sink!", R.drawable.plumbing))
+        list.add(Model("Grass Mowing", "I need someone to mow my lawn!", R.drawable.grass))
+        list.add(Model("Cleaner", "I need someone to clean my house!", R.drawable.clean))
+        list.add(Model("Cook", "I need someone to cook my food!", R.drawable.cook))
+        list.add(Model("Painter", "I need someone to paint my walls!", R.drawable.paint))
+        list.add(Model("The Carpenter", "I need someone to build my garage!", R.drawable.carpenter))
 
     listview.adapter = MyAdapter(this, R.layout.row, list)
 
