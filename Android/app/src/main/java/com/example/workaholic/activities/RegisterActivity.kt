@@ -20,7 +20,7 @@ class RegisterActivity : BaseActivity() {
 
         register_butt.setOnClickListener {
                 register()
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, CameraActivity::class.java)
             startActivity(intent)
         }
 

@@ -33,6 +33,10 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             saveFirebase(title,description)
         }
 
+        post_job_butt.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         if(intent.hasExtra(Constants.EXTRA_USER_DETAILS))
         {

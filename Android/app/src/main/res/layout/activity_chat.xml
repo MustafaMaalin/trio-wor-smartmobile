@@ -42,7 +42,7 @@
 my fridge. The cooler functions don't
 work at all."
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
@@ -123,8 +123,8 @@ work at all."
 
     <TextView
         android:id="@+id/Locationtxt"
-        android:layout_width="396dp"
-        android:layout_height="81dp"
+        android:layout_width="410dp"
+        android:layout_height="87dp"
         android:background="#FDAE4AE4"
         android:text="Location"
         android:textAlignment="center"
@@ -132,8 +132,9 @@ work at all."
         android:textSize="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getPos"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

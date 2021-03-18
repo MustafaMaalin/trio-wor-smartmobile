@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        askHelpButton.setOnClickListener {
+            val intent = Intent(this, UserProfileActivity::class.java)
+            startActivity(intent)
+        }
         val sharedPreferences = getSharedPreferences(Constants.PREFERENCES,Context.MODE_PRIVATE)
         val username = sharedPreferences.getString(Constants.LOGGED_IN_USERNAME,"")!!
         tv_main.text = "Username : $username"

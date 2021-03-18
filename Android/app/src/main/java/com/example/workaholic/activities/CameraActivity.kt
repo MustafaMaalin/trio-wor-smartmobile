@@ -29,6 +29,10 @@ class CameraActivity : AppCompatActivity() {
         button2.setOnClickListener{var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(i, 101)
         }
+        nextButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
