@@ -39,6 +39,11 @@ struct AddPost: View {
     }
 }
 
+
+
+
+
+
 struct imgPicker: UIViewControllerRepresentable{
     
     @Binding var isPresented: Bool
