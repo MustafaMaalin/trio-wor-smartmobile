@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -31,9 +32,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             val title:String = job_title.text.toString()
             val description: String = job_description.text.toString()
             saveFirebase(title,description)
-        }
 
-        post_job_butt.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -133,6 +132,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             .addOnFailureListener {
                 showSnackBar("Failed to add!",true)
             }
+        Log.e("title",title)
     }
 
 }
