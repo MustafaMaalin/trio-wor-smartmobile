@@ -14,6 +14,10 @@
 		64671D232624A28D00A3D919 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64671D222624A28D00A3D919 /* PostView.swift */; };
 		6470DC4B2624B81600BD6984 /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470DC4A2624B81600BD6984 /* Trend.swift */; };
 		6470DC4F2624B83000BD6984 /* TrendLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6470DC4E2624B83000BD6984 /* TrendLine.swift */; };
+		6490ABA726289F0B00C02590 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490ABA626289F0B00C02590 /* Posts.swift */; };
+		6490ABAA2628A4B500C02590 /* NewPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490ABA92628A4B500C02590 /* NewPosts.swift */; };
+		6490ABAE2628A52400C02590 /* NewPostsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490ABAD2628A52400C02590 /* NewPostsRow.swift */; };
+		6490ABB12628A5E400C02590 /* NewPostz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490ABB02628A5E300C02590 /* NewPostz.swift */; };
 		64DDA7B22624706A0095A637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA7B12624706A0095A637 /* AppDelegate.swift */; };
 		64DDA7B42624706A0095A637 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA7B32624706A0095A637 /* SceneDelegate.swift */; };
 		64DDA7B62624706A0095A637 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDA7B52624706A0095A637 /* ContentView.swift */; };
@@ -38,6 +42,10 @@
 		64671D222624A28D00A3D919 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		6470DC4A2624B81600BD6984 /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		6470DC4E2624B83000BD6984 /* TrendLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendLine.swift; sourceTree = "<group>"; };
+		6490ABA626289F0B00C02590 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		6490ABA92628A4B500C02590 /* NewPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPosts.swift; sourceTree = "<group>"; };
+		6490ABAD2628A52400C02590 /* NewPostsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostsRow.swift; sourceTree = "<group>"; };
+		6490ABB02628A5E300C02590 /* NewPostz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostz.swift; sourceTree = "<group>"; };
 		64DDA7AE2624706A0095A637 /* Empathy2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empathy2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DDA7B12624706A0095A637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64DDA7B32624706A0095A637 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 			children = (
 				64671D1A26249CE900A3D919 /* Post.swift */,
 				64671D1E26249CF400A3D919 /* PostRow.swift */,
+				6490ABA626289F0B00C02590 /* Posts.swift */,
+				6490ABB02628A5E300C02590 /* NewPostz.swift */,
+				6490ABA92628A4B500C02590 /* NewPosts.swift */,
+				6490ABAD2628A52400C02590 /* NewPostsRow.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -297,13 +309,17 @@
 				6470DC4F2624B83000BD6984 /* TrendLine.swift in Sources */,
 				64671D232624A28D00A3D919 /* PostView.swift in Sources */,
 				F55E1BF926274A3D0052B2F4 /* Test.swift in Sources */,
+				6490ABA726289F0B00C02590 /* Posts.swift in Sources */,
 				64DDA7B22624706A0095A637 /* AppDelegate.swift in Sources */,
 				64DDA7B42624706A0095A637 /* SceneDelegate.swift in Sources */,
 				F5078FB426276F4E004BA275 /* AddPost.swift in Sources */,
 				F55E1BE126270B2F0052B2F4 /* Firebase.swift in Sources */,
+				6490ABAA2628A4B500C02590 /* NewPosts.swift in Sources */,
 				64671D1B26249CE900A3D919 /* Post.swift in Sources */,
 				64671D0D26247E1700A3D919 /* UserRow.swift in Sources */,
+				6490ABAE2628A52400C02590 /* NewPostsRow.swift in Sources */,
 				64DDA7B62624706A0095A637 /* ContentView.swift in Sources */,
+				6490ABB12628A5E400C02590 /* NewPostz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,7 +32,7 @@ struct PostRow:View {
             
             Text(post.body)
                 .padding(.leading,16)
-            Image("baby").resizable().aspectRatio(contentMode: .fill).clipped()
+            Image(post.image).resizable().aspectRatio(contentMode: .fill).clipped()
         }
         
     }

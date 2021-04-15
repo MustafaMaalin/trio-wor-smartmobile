@@ -13,4 +13,5 @@ struct Post {
     let body: String
     let image: String
     let user: String
+    
 }
