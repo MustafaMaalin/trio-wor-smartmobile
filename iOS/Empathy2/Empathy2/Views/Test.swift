@@ -12,7 +12,7 @@ struct Test: View {
     {
         UITabBar.appearance().barTintColor = .systemBackground
     }
-    var icons = ["person","person", "plus.app","person","gear",]
+    var icons = ["house","person", "plus.app","person","gear",]
     
     @State var showModal = false
     @State var selectedIndex = 0
