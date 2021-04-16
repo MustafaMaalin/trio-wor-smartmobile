@@ -34,10 +34,12 @@ struct AddPost: View {
     
     var body: some View {
         
+        
         VStack
         {
             NavigationView {
                 
+
                 Form {
                     Image(uiImage: img)
                         .resizable()
@@ -45,6 +47,9 @@ struct AddPost: View {
                         .frame(width:300,height:200)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         .clipped()
+                        .onAppear{
+                            img = UIImage(systemName: "photo")!
+                        }
                     
                     
                     Button(action:
@@ -75,25 +80,28 @@ struct AddPost: View {
                             .frame( height: 150, alignment: .topLeading)
                     }
                     
-                    Button(action: {
-                        submit.toggle()
-                        putData()
-                        
-                        PostView.postList.postList.append(NewPosts(id:0, image:self.img, description:self.description, user: "Lewie Balkan"))
-                        
-                        PostView.posts.posts.append(Post(id: 4, time: "Anytime", body: "bruh",
-                                                         image: "5", user: "Billy boy"))
-                       
-                        
-                    }, label: {
-                        /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                    })
-                    
-                    
+                  
                     
                 }.frame(alignment:.center)
                 .navigationBarTitle("New Post")
+                
             }
+            Button(action: {
+                submit.toggle()
+                putData()
+                
+                PostView.postList.postList.append(NewPosts(id:0, image:self.img, description:self.description, user: "Lewie Balkan"))
+                
+              
+                
+            }, label: {
+                WeatherButton(title: "Submit", textColor: .white, backgroundColor: .blue)
+            })
+            
+            
+            
+       
+            
             
         }.padding(.top,-50)
     }

@@ -78,3 +78,62 @@ struct TopicHStack: View {
                 .font(.title)
         }    }
 }
+
+struct WeatherButton: View {
+
+    var title: String
+    var textColor: Color
+    var backgroundColor: Color
+
+
+    var body: some View {
+        Text(title)
+            .frame(width: 280, height: 50)
+            .background(backgroundColor)
+            .foregroundColor(textColor)
+            .font(.system(size: 20, weight: .bold, design: .default))
+            .cornerRadius(10)
+    }
+}
+struct AddPhotoButton: View {
+
+    var title: String
+    var textColor: Color
+    var backgroundColor: Color
+
+
+    var body: some View {
+        Text(title)
+            .frame(width: 280, height: 50)
+            .background(backgroundColor)
+            .foregroundColor(textColor)
+            .font(.system(size: 20, weight: .bold, design: .default))
+            .cornerRadius(10)    }
+}
+struct BackgroundTopicsRight: View {
+
+
+    var body: some View {
+
+
+
+        LinearGradient(gradient: Gradient(colors: [.black, .blue]),
+                       startPoint: .topLeading,
+                       endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+struct BackgroundTopicsLeft: View {
+
+
+    var body: some View {
+
+
+
+        LinearGradient(gradient: Gradient(colors: [.black, .blue]),
+                       startPoint: .topTrailing,
+                       endPoint: .bottomLeading)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+

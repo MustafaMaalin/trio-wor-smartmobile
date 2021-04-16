@@ -12,7 +12,7 @@ struct Test: View {
     {
         UITabBar.appearance().barTintColor = .systemBackground
     }
-    var icons = ["house","person", "plus.app","person","gear",]
+    var icons = ["house","person.2", "plus.app.fill","message","person",]
     
     @State var showModal = false
     @State var selectedIndex = 0
@@ -34,9 +34,10 @@ struct Test: View {
                 switch selectedIndex
                 {
                 case 0: PostView()
-                case 1: ContentView()
+                case 1: EventsView()
                 case 2: AddPost()
-                case 3: PostView()
+                case 3: ContentView()
+                case 4: Profile()
                     
                 default:
                     Text("Remaining")
@@ -54,7 +55,7 @@ struct Test: View {
                         
                         if num == 2
                         {
-                        showModal.toggle()
+                       
                         }
                         
                     }, label: {
@@ -64,14 +65,14 @@ struct Test: View {
                         {
                             Image(systemName: icons[num])
                                 .font(.system(size:49,weight: .light))
-                                .foregroundColor(.blue)
+                                .foregroundColor(.white)
                         }
                         else
                         {
                         Image(systemName: icons[num])
-                            .font(.system(size:26,weight: .bold))
+                            .font(.system(size:22,weight: .bold))
                             .foregroundColor( selectedIndex == num ? Color(.label) :
-                                                .init(white:0.8))
+                                                .init(.gray))
                         }
                         Spacer()
                         
@@ -93,6 +94,6 @@ struct Test: View {
 
 struct Test_Previews: PreviewProvider {
     static var previews: some View {
-        Test()
+        Test().preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

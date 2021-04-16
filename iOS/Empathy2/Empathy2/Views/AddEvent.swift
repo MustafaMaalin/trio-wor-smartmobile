@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PostPageTest: View {
     @State var receive = false
     @State var number = 1
@@ -15,14 +16,14 @@ struct PostPageTest: View {
     @State var title = ""
     @State var description = ""
     @State var submit = false
+    @State var showModal = false
     
     var body: some View {
         
-            
-       
         
         NavigationView {
             VStack {
+               
                 Form {
                     Toggle(isOn: $receive, label: {
                         Text("Recieve notification")

@@ -21,6 +21,7 @@ struct PostRow:View {
                     .resizable()
                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     .frame(width: 60, height: 60)
+                    .overlay(Circle().stroke(Color.white,lineWidth: 2))
                     .clipped()
                 
                 VStack(alignment: .leading){

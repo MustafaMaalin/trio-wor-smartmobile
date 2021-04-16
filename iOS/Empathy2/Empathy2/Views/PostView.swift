@@ -49,11 +49,6 @@ struct PostView: View {
                 )
                 
             // Trending Group
-                Button(action: {
-                    PostView.posts.posts.append(Post(id: 4, time: "Anytime", body: "bruh", image: "5", user: "Billy boy"))
-                }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
               TrendLine()
                 
                     
