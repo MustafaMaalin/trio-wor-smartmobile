@@ -149,10 +149,10 @@ const stepDown = () => {
     
   }
 clockTimer = setInterval(() => {
-  stepDown()
+  //stepDown()
   displayCurrentTimeLeftInSession()
   progressBar.set(calculateSessionProgress())
-}, 1000)
+}, 100)
   
 };
 
@@ -183,7 +183,7 @@ const calculateSessionProgress = () => {
   // calculate the completion rate of this session
   const sessionDuration =
     type === 'Work' ? workSessionDuration : breakSessionDuration
-  return (timeSpentInCurrentSession / sessionDuration) * 1; // was
+  return (timeSpentInCurrentSession / sessionDuration) ; 
 }
 const togglePlayPauseIcon = (reset) => {
   const playIcon = document.querySelector('#play-icon')
