@@ -1,4 +1,4 @@
-const pomodoroTimer = document.querySelector("#pomodoro-timer");
+//const pomodoroTimer = document.querySelector("#pomodoro-timer");
 const startButton = document.querySelector("#pomodoro-start");
 //const pauseButton = document.querySelector("#pomodoro-pause");
 const stopButton = document.querySelector("#pomodoro-stop");
@@ -45,6 +45,8 @@ startButton.addEventListener("click", () => {
 stopButton.addEventListener("click", () => {
   toggleClock(true);
 });
+
+
 
 const stopClock = () => {
   setUpdatedTimers()
@@ -119,6 +121,7 @@ const displaySessionLog = (type) => {
 };
 
 const stepDown = () => {
+  
   if (currentTimeLeftInSession > 0) {
     // decrease time left / increase time spent
     currentTimeLeftInSession--;
@@ -143,8 +146,14 @@ const stepDown = () => {
       currentTaskLabel.disabled = false;
       displaySessionLog("Break");
     }
+    
   }
-  displayCurrentTimeLeftInSession();
+clockTimer = setInterval(() => {
+  stepDown()
+  displayCurrentTimeLeftInSession()
+  progressBar.set(calculateSessionProgress())
+}, 1000)
+  
 };
 
 const displayCurrentTimeLeftInSession = () => {
@@ -159,9 +168,23 @@ const displayCurrentTimeLeftInSession = () => {
   }
   if (hours > 0) result += `${hours}:`;
   result += `${addLeadingZeroes(minutes)}:${addLeadingZeroes(seconds)}`;
-  pomodoroTimer.innerText = result.toString();
+  progressBar.text.innerText = result.toString()
 };
 
+const progressBar = new ProgressBar.Circle('#pomodoro-timer', {
+  strokeWidth: 5,
+  text: {
+    value: '25:00',
+  },
+  trailColor: '#f4f4f4',
+});
+
+const calculateSessionProgress = () => {
+  // calculate the completion rate of this session
+  const sessionDuration =
+    type === 'Work' ? workSessionDuration : breakSessionDuration
+  return (timeSpentInCurrentSession / sessionDuration) * 1; // was
+}
 const togglePlayPauseIcon = (reset) => {
   const playIcon = document.querySelector('#play-icon')
   const pauseIcon = document.querySelector('#pause-icon')
@@ -183,3 +206,4 @@ const showStopIcon = () => {
   const stopButton = document.querySelector('#pomodoro-stop')
   stopButton.classList.remove('hidden')
 }
+
