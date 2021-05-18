@@ -5,10 +5,6 @@ height: 896px;
 background: linear-gradient(180deg, #D3E0EA 64.06%, rgba(246, 245, 245, 0.67) 85.42%);
 }
 
-.notification{
-position: absolute;
-width: 359px;
-height: 112px;
-left: 31px;
-top: 54px;
-}
+.hidden {
+    display: none;
+  }
