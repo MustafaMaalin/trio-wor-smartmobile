@@ -2,20 +2,15 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   background-image: linear-gradient(
     0deg,
-    rgba(247, 247, 247, 1) 23.8%,
-    rgba(252, 221, 221, 1) 92%
+    rgba(246, 245, 245, 1),
+    rgb(174, 213, 243)
   );
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: 'Lato', sans-serif;
   margin: 0;
 }
@@ -27,6 +22,7 @@ main {
   text-align: center;
 }
 nav {
+  margin-top: 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +38,7 @@ li {
 }
 
 h1 {
-  color: #e74c3c;
+  color: rgba(39, 102, 120, 1);
   margin-bottom: 0.5rem;
 }
 .container {
