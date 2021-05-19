@@ -7,50 +7,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
 
     <title>Suggestions</title>
 </head>
 
-<body style="background-image: linear-gradient(
-    0deg,
-    rgba(247, 247, 247, 1) 23.8%,
-    rgb(69, 187, 207) 92%
-  ); height: 100vh;">
+<body style="background: linear-gradient(180.77deg, #1687A7 0.67%, rgba(172, 176, 180, 0) 116.99%);;height: 100vh">
 
 
 <!-- TOP CARDS -->
 
-    <h1 style="color: aliceblue; text-shadow: 1px 1px rgba(0, 0, 0, 0.412);">Suggestions</h1>
+    <h1 style="padding:2em 0 2em 2em;color: white; ">Suggestions</h1>
     <div class="row" style="display: flex; ">
         <div class="card"
-            style="width: 8rem; border: 10px 10px black;  border-radius: 17%; margin: auto; justify-content: center; box-shadow: 2px 2px 2px 2px rgba(255, 0, 0, 0.412); ">
+            style="width: 8rem; box-shadow: 5px 10px 30px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 22px; margin: auto; justify-content: center;width: 150px;  ">
             <div class="card-body" style="display: flex; flex-direction: column; ">
-                <img src="images/home-24px.svg">
-                <h5 class="card-title" style="display: flex; justify-content: center;">Home</h5>
+                <img src="images/home-24px.svg" style="height:4em;">
+                <h5 class="card-title" style="display: flex; justify-content: center;color:#276678;margin-top: 4em;">Home</h5>
                 <h7 style="display: flex; justify-content: center;"> 12 tasks</h7>
             </div>
         </div>
 
-        <div class="card" style="width: 8rem; border-radius: 17%; margin: auto; justify-content: center; box-shadow: 2px 2px 2px 2px rgba(255, 0, 0, 0.412);">
+        <div class="card" style="width: 8rem; box-shadow: 5px 10px 30px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 22px; margin: auto; justify-content: center;width: 150px; ">
             <div class="card-body" style="display: flex; flex-direction: column;  ">
-                <img src="images/add_task-24px.svg">
-                <h5 class="card-title" style="display: flex; justify-content: center;">Work</h5>
+                <img src="images/add_task-24px.svg" style="height:4em;">
+                <h5 class="card-title" style="display: flex; justify-content: center;color:#276678;margin-top: 4em;">Work</h5>
                 <h7 style="display: flex; justify-content: center;"> 12 tasks</h7>
             </div>
         </div>
-        <div class="card" style="width: 8rem; border-radius: 17%; justify-content: center; margin: auto; box-shadow: 2px 2px 2px 2px rgba(255, 0, 0, 0.412); ">
+        <div class="card" style="width: 8rem; box-shadow: 5px 10px 30px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 22px;justify-content: center; margin: auto;width: 150px;  ">
             <div class="card-body" style="display: flex; flex-direction: column; ">
-                <img src="images/star_rate-24px.svg">
-                <h5 class="card-title" style="display: flex; justify-content: center;">Urgent</h5>
+                <img src="images/star_rate-24px.svg" style="height:4em;">
+                <h5 class="card-title" style="display: flex; justify-content: center;color:#276678;margin-top: 4em;">Urgent</h5>
                 <h7 style="display: flex; justify-content: center;"> 12 tasks</h7>
             </div>
         </div>
 
     </div>
-
+    <img src="./images/linez.png" style="height: 5px;width: 150px;margin-left: 13em;margin-top: 1em;">
 <!-- SUGGESTIONS -->
 
-    <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column;z-index: 11;padding-left: 3em;">
         <div style="display: flex; flex-direction: row; align-items: center; " >
             <div style="position: relative; width: 110px;">
                 <img src="images/dot.svg" alt="dot" style="width: 110px; ">
@@ -96,6 +97,7 @@
             </div>
         </div>
     </div>
+    <img src="./images/drip.png" style="position:absolute;margin-top: -10em;margin-left: 18em;">
 
 </body>
 
