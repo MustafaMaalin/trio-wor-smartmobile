@@ -13,15 +13,32 @@
   <title>Document</title>
 </head>
 
-<body>
-  <div id="pomodoro-container">
+<body style="height: 100vh;background: linear-gradient(180.77deg, #1687A7 0.67%, rgba(172, 176, 180, 0) 116.99%);">
+ 
+
+  <div style="width:25vh;height: 25vh; background-color:whitesmoke; border-radius: 50%;position: absolute;margin-left: -120px;margin-top: 1em;z-index: 1;"></div>
+  <!-- <div class="container"></div> -->
+
+  <div style="display: flex;flex-direction: row;position: relative;z-index: 10;">
+    <div style="display: flex; flex-direction:column; justify-content: center;padding: 10vh 3vh 5vh 9vh;">
+      <h1 style="font-weight:lighter;"> Good Morning, Mihail</h1> <br>
+      <h1 style="font-weight: lighter;"> 10ºC</h1>
+      <h3 style="font-size: medium;font-weight: lighter;">Roermond, Netherlands</h3>
+    </div>
+
+    <div style="padding-top: 10em;margin-left: 3em;"><img src="./images/add.png"/></div>
+  </div>
+
+
+
+  <div id="pomodoro-container" style="margin-left: 6em;margin-top: 3em;">
     <div id="pomodoro-clock">
       <div id="pomodoro-timer"></div>
       <div>
-        <input type="text" id="pomodoro-clock-task" placeholder="Enter your task..." />
+        <input type="text" style="margin-top: 1em;border-radius: 10px;" id="pomodoro-clock-task" placeholder="Enter your task..." />
       </div>
       <div id="pomodoro-clock-actions">
-        <button id="pomodoro-start">
+        <button id="pomodoro-start" style="margin-top: 1em; width: 90px; border-radius: 5px;">
           <i class="fas fa-play" id="play-icon"></i>
           <i class="fas fa-pause hidden" id="pause-icon"></i>
         </button>
@@ -31,30 +48,33 @@
       </div>
       <!-- new -->
       <div id="pomodoro-clock-title">
-        <span>
-          Changes made here will reflect at the start of the next work /
-          break session
+        <span style="font-size: xx-large;">
+         Pomodoro Session
         </span>
       </div>
       <div id="pomodoro-clock-actions">
-        <div class="pomodoro-input">
+        <div class="pomodoro-input" style="margin-top: 1em;">
           <label>Work Duration</label>
+          <br>
           <input name="input-work-duration" id="input-work-duration" type="number" />
+          <br>
         </div>
+        <br>
         <div class="pomodoro-input">
           <label>Break Duration</label>
+          <br>
           <input name="input-break-duration" id="input-break-duration" type="number" />
         </div>
       </div>
       <div id="pomodoro-info">
-        <h3>Your Sessions </h3>
+        <h3 style="margin-top: 5em;">Your Sessions </h3>
         <ul id="pomodoro-sessions">
         </ul>
       </div>
     </div>
   </div>
   </div>
-  <script src="/node_modules/progressbar.js/dist/progressbar.js"></script>
+  <script src="/PWA/node_modules/progressbar.js/dist/progressbar.js"></script>
   <script src="script.js"></script>
 
 </body>
