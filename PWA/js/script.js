@@ -10,6 +10,8 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
+let contor = 0;
+let contor2 = 0;
 
 // Song titles
 const songs = ['hey', 'summer', 'ukulele', 'paradis'];
@@ -176,3 +178,30 @@ audio.addEventListener('ended', nextSong);
 
 // Time of song
 // audio.addEventListener('timeupdate',DurTime);
+
+function Appear() { 
+  if (contor == 0){
+    document.getElementById("mainFrame").style.display="block";
+    contor++; 
+    document.getElementById("time").style.marginLeft = "-10px";
+    document.getElementById("time").style.marginRight = "5px";
+  }
+  else{
+    document.getElementById("mainFrame").style.display="none";
+    document.getElementById("time").style.marginLeft = "150px";
+    contor--; 
+  }
+	
+}
+
+function AppearPlus()
+{
+ if (contor2 == 0){
+   document.getElementById("lights").style.display = "block";
+   contor2++;
+ }
+ else{
+   contor2--;
+   document.getElementById("lights").style.display = none;
+ }
+}

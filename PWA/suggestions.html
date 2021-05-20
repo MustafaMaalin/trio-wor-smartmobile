@@ -66,7 +66,12 @@
                 <img src="images/dot.svg" alt="dot" style="width: 110px;">
             </div>
             <div>
-                <h5 style="text-shadow: 1px 1px rgba(255, 255, 255, 0.412);">Turn off the lights</h5>
+                <h5 onclick="bruh()" style="text-shadow: 1px 1px rgba(255, 255, 255, 0.412);padding-right: 2em;">Turn off the lights</h5>
+            </div>
+            <div style="display:none; right: 0;min-width: 100px; background: #1687A7; margin-top: -20px;height: 70px;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);padding-left: 1em;" id="lights">
+                <img src="images/add.png" style="width: 53px;height: 57px;margin-top: 8px;margin-left: 10px;">
+              
             </div>
         </div>
 
@@ -99,6 +104,14 @@
     </div>
     <img src="./images/drip.png" style="position:absolute;margin-top: -10em;margin-left: 18em;">
 
+
+    <script src="js/script.js"></script>
+
 </body>
+<script>
+    function bruh(){
+    document.getElementById("lights").style.display = "flex";
+    }
+</script>
 
 </html>

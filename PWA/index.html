@@ -17,8 +17,8 @@
     <nav>
       <h1></h1>
       <ul>
-        <li>Home</li>
-        <li>About</li>
+        <a style="text-decoration: none;color: black;" href="./index.html"><li>Home</li></a>
+        <a style="text-decoration: none;color: black;" href="./suggestions.html"><li>Suggestions</li></a>
         <li>Blog</li>
       </ul>
     </nav>
@@ -79,11 +79,16 @@
         <div style="height:2em;width:2em;border-radius:50%;background-color: rgba(39, 102, 120, 1);"></div>
 
         <div style="margin-left: 1em; margin-top: -7px;font-weight: lighter;">
-          <h2 style="font-weight: lighter;font-size: x-large;">Breakfast</h1>
+        <h2 onclick="Appear()" style="font-weight: lighter;font-size: x-large;">Breakfast</h2></a>
           <h3 style="color: rgba(39, 102, 120, 1);font-weight: lighter;">Roermond, Netherlands</h3>
         </div>
 
-        <h3 style="margin-left: 8em;font-weight: lighter;">6:00 - 7:00</h3>
+        <h3 id="time" style="margin-left: 8em;font-weight: lighter;transition: 1s ease-out;">6:00 - 7:00</h3>
+        <div style="display:none; min-width: 180px;background: #1687A7;margin-top: -20px;height: 80px;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);padding-left: 1em;transition: 1s ease-in-out;" id="mainFrame">
+            <img src="images/Pomodore.png" style="padding-right: 25px;width: 53px;height: 57px;margin-top: 15px;border-right: 1px solid white;">
+           <img src="images/reminder.png" style="width: 53px;height: 56px;margin-top: 15px;margin-left: 20px">
+        </div>
        
       </div>
 
@@ -152,6 +157,9 @@
 
   
   <script src="js/app.js"></script>
+  <script src="js/script.js"></script>
+ 
+
 </body>
 
 </html>
