@@ -14,18 +14,19 @@
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #12121f;">
 
 
-
+  <a href="./index.html"><button type="button" style="width:100px;height:50px; background-color: hsl(182, 70%, 29%);margin-top: 1em;" class="btn btn-info">Back</button></a>
   <div class="container">
 
-    <div class="dropdown" style="margin: 5%; ">
+    <div class="dropdown" style="margin-top:-30em; ">
       <button style="width: 300px; color: aliceblue; background-color: hsl(182, 70%, 29%); color: #000;"
         class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
         aria-expanded="false">
         Choose Topic
       </button>
+   
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu2"
         style="color: aliceblue; background-color: hsl(182, 70%, 29%);">
         <li><button class="dropdown-item" type="button">Home</button></li>
@@ -33,9 +34,6 @@
         <li><button class="dropdown-item" type="button">School</button></li>
       </ul>
     </div>
-
-
-
 
 
 
@@ -73,34 +71,35 @@
       <div class="days"></div>
     </div>
 
-    <div style="display: flex; flex-direction: column; margin: 5%;">
+    <div style="display: flex; flex-direction: column; margin: 5%;background-color: hsl(182, 70%, 29%);padding :1em ">
       <h1>This month - Meetings</h1>
+      <br><br>
 
       <div
-        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: hsl(182, 70%, 29%);  border: 10px 10px black; width: 450px;  border-radius: 5px; margin-bottom: 5% ; box-shadow: 1px 1px 1px 1px rgba(141, 221, 220, 0.479); ">
+        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;  width: 450px;  border-radius: 5px; margin-bottom: 5% ; ">
         <div style="display: flex; justify-content: left;">
           <img src="images/task_alt-24px.svg" alt="check">
           <h2>Family Reunion</h2>
         </div>
-        <h3 style="margin-right: 1rem;">2nd February - 12PM</h3>
+        <h3 style="margin-right: 1rem;">2nd May - 12PM</h3>
       </div>
 
       <div
-        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: hsl(182, 70%, 29%);  border: 10px 10px black; width: 450px;  border-radius: 5px; margin-bottom: 5% ; box-shadow: 1px 1px 1px 1px rgba(141, 221, 220, 0.479);">
+        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 450px;  border-radius: 5px; margin-bottom: 5% ; ">
         <div style="display: flex; justify-content: left;">
           <img src="images/task_alt-24px.svg" alt="check">
           <h2>Family Reunion</h2>
         </div>
-        <h3 style="margin-right: 1rem;">2nd February - 12PM</h3>
+        <h3 style="margin-right: 1rem;">3rd May - 12PM</h3>
       </div>
 
       <div
-        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; background-color: hsl(182, 70%, 29%);  border: 10px 10px black; width: 450px;  border-radius: 5px; margin-bottom: 5% ; box-shadow: 1px 1px 1px 1px rgba(141, 221, 220, 0.479);">
+        style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;  width: 450px;  border-radius: 5px; margin-bottom: 5% ;">
         <div style="display: flex; justify-content: left;">
           <img src="images/task_alt-24px.svg" alt="check">
           <h2>Family Reunion</h2>
         </div>
-        <h3 style="margin-right: 1rem;">2nd February - 12PM</h3>
+        <h3 style="margin-right: 1rem;">28th June - 12PM</h3>
       </div>
 
     </div>
@@ -108,32 +107,7 @@
 
   </div>
 
-  <script>
-
-    function showNotification() {
-      const notification = new Notification("New message from Do It!", {
-        body: "Hey there, do you want to play a chill song while working? Click here!",
-        // icon: "assets/notificationLogo.jpg"
-      });
-
-      notification.onclick = (e) => {
-        window.location.href = "http://127.0.0.1:5500/music.html"
-      }
-    }
-
-    // default, granted, denied
-    console.log(Notification.permission);
-
-    if (Notification.permission === "granted") {
-      showNotification();
-    } else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(permission => {
-        if (permission === "granted") {
-          showNotification();
-        }
-      });
-    }
-  </script>
+  
 
 
   <script src="js/scriptCalendar.js"></script>
